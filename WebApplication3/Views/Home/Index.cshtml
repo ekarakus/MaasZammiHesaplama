@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<form method="post">
+    <input placeholder="maaş giriniz"
+           name="maas"
+           type="number" />
+    <hr />
+    <select name="mezuniyet">
+        <option value="5">ilkokul</option>
+        <option value="7">ortaokul</option>
+        <option value="9">Lise</option>
+        <option value="12">Yüksek okul</option>
+        <option value="15">Fakülte</option>
+    </select>
+    <hr />
+    @if (ViewData["hata"] != null)
+    {
+        <div>@ViewData["hata"]</div>
+    }
+    else
+    {
+        <div>Zam tutarı: @ViewData["zam"]</div>
+        <div>Yeni maaş: @ViewData["yenimaas"]</div>
+
+    }
+
+    <button type="submit">Hesapla</button>
+</form>
